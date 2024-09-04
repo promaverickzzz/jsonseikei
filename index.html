@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON 整形ツール</title>
+    <meta name="description" content="JSON 整形ツールで簡単にデータをフォーマット。">
+    <meta name="keywords" content="JSON 整形, JSON フォーマット, データ整形">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function formatJSON() {
+            const input = document.getElementById('jsonInput').value;
+            try {
+                const json = JSON.parse(input);
+                document.getElementById('jsonOutput').value = JSON.stringify(json, null, 2);
+            } catch (error) {
+                alert('無効なJSONです。');
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>JSON 整形ツール</h1>
+    </header>
+    <main>
+        <section id="jsonFormatter">
+            <h2>JSON 整形</h2>
+            <textarea id="jsonInput" placeholder="ここにJSONを入力"></textarea>
+            <button onclick="formatJSON()">整形</button>
+            <textarea id="jsonOutput" readonly placeholder="整形されたJSONがここに表示されます"></textarea>
+        </section>
+        
+        <section id="features">
+            <h2>特徴</h2>
+            <ul>
+                <li>簡単にJSONを整形</li>
+                <li>リアルタイムで結果を表示</li>
+                <li>エラーチェック機能付き</li>
+            </ul>
+        </section>
+
+        <section id="faq">
+            <h2>よくある質問</h2>
+            <h3>JSON整形ツールは無料ですか？</h3>
+            <p>はい、完全に無料です。</p>
+            <h3>どんなブラウザで利用できますか？</h3>
+            <p>ほとんどの最新のブラウザで利用可能です。</p>
+        </section>
+
+        <section id="testimonials">
+            <h2>お客様の声</h2>
+            <blockquote>
+                <p>このツールは非常に使いやすく、私の仕事が大いに助かりました。</p>
+                <cite>— 太郎 山田</cite>
+            </blockquote>
+            <blockquote>
+                <p>直感的に使える素晴らしいツールです。</p>
+                <cite>— 花子 佐藤</cite>
+            </blockquote>
+        </section>
+
+        <section id="externalLink">
+            <h2>外部リンク</h2>
+            <p>詳細なJSON整形機能は以下のサイトをご覧ください: 
+                <a href="https://json-ninja.netlify.app/" target="_blank">JSON整形ツール - オンラインでJSONを簡単に整形・コピー</a>
+            </p>
+        </section>
+    </main>
+</body>
+</html>
